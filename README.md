@@ -67,3 +67,24 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+
+## memo
+```
+create-nuxt-app v3.7.1
+✨  Generating Nuxt.js project in nuxt-todo
+? Project name: nuxt-todo
+? Programming language: JavaScript
+? Package manager: Npm
+? UI framework: None
+? Nuxt.js modules: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Linting tools:
+? Testing framework: None
+? Rendering mode: Single Page App
+? Deployment target: Server (Node.js hosting)
+? Development tools: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? What is your GitHub username? taako-502
+? Version control system: Git
+
+🎉  Successfully created project nuxt-todo
+```
