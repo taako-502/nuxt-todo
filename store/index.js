@@ -8,7 +8,12 @@ const createStore = () => {
         {content: 'テスト', created: '2020-04-30 17:00', state: '作業前'},
         {content: 'コーディング', created: '2020-04-30 16:00', state: '作業中'},
         {content: '環境構築', created: '2020-04-30 15:30', state: '完了'}
-      ] ,
+      ],
+      option: [
+        {id:0 , label:'作業前'},
+        {id:1 , label:'作業中'},
+        {id:2 , label:'完了'},
+      ]
     }),
     mutations: {
       insert: function(state ,obj) {
@@ -34,8 +39,27 @@ const createStore = () => {
             }
           }
         }
-      }
-    },
+      },
+      changeState: function(state, obj) {
+        for (var i = 0; i < state.todos.length; i++) {
+          const ob = state.todos[i];
+          if (ob.content == obj.content && ob.created == obj.created && ob.state == obj.state) {
+            let nowState;
+            for (var j = 0; j < state.option.length; j++) {
+              if(state.option[j].label == ob.state){
+                nowState = state.option[j].id;
+              }
+            }
+            nowState++;
+            if(nowState >= state.option.length){
+              nowState = 0;
+            }
+            obj.state = state.option[nowState].label;
+            return;
+          }
+        }
+      },
+    }
   })
 }
 
