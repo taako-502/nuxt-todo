@@ -23,6 +23,17 @@ const createStore = () => {
           created: fmt,
           state: '作業前'
         })
+      },
+      remove: function(state ,obj) {
+        for (var i = 0; i < state.todos.length; i++) {
+          const ob = state.todos[i];
+          if(ob.content == obj.content && ob.created == obj.created) {
+            if(confirm('"' + ob.content + '"を削除しますか？')){
+              state.todos.splice(i,1);
+              return;
+            }
+          }
+        }
       }
     },
   })
